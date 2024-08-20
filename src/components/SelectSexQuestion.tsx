@@ -18,7 +18,7 @@ const SelectSexQuestion: React.FC<SelectSexQuestionProps> = ({ question, onAnswe
         {question.options.map(option => (
           <button
             key={option}
-            className={`option-button ${selectedAnswer === option ? 'selected' : ''}`}
+            className={`bg-primary text-white px-4 py-2 rounded ${selectedAnswer === option ? 'selected' : ''}`}
             onClick={() => onAnswer(option)}
           >
             {option}

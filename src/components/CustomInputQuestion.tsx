@@ -15,7 +15,6 @@ const CustomInputQuestion: React.FC<CustomInputQuestionProps> = ({ question, onA
   const handleNext = () => {
     onAnswer(inputValue);
   };
-
   return (
     <div className="custom-input-question">
       <h2>{question.question}</h2>
@@ -24,12 +23,12 @@ const CustomInputQuestion: React.FC<CustomInputQuestionProps> = ({ question, onA
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
         placeholder="Type your answer here..."
-        className="text-input"
+        className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       />
       <button
-        className="next-button"
         onClick={handleNext}
         disabled={!inputValue}
+        className="bg-primary text-white px-4 py-2 rounded"
       >
         Next
       </button>
