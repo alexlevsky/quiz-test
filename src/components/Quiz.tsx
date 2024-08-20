@@ -11,8 +11,6 @@ const Quiz: React.FC = () => {
   const [startTime, setStartTime] = useState(Date.now());
   const [timeSpent, setTimeSpent] = useState<{ [key: number]: number }>({});
 
-  const currentQuestion = questions[currentQuestionIndex];
-
   useEffect(() => {
     const storedAnswers = localStorage.getItem('quiz-answers');
     const storedTimes = localStorage.getItem('quiz-times');
@@ -39,6 +37,8 @@ const Quiz: React.FC = () => {
     setStartTime(Date.now());
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      setCurrentQuestionIndex(questions.length);
     }
   };
 
@@ -57,6 +57,11 @@ const Quiz: React.FC = () => {
     localStorage.clear();
   };
 
+  if (currentQuestionIndex >= questions.length) {
+    return <FinalScreen timeSpent={timeSpent} resetQuiz={resetQuiz} />;
+  }
+
+  const currentQuestion = questions[currentQuestionIndex];
   if (!currentQuestion) return null;
 
   return (
@@ -83,11 +88,8 @@ const Quiz: React.FC = () => {
           selectedAnswer={answers[currentQuestion.id]}
         />
       )}
-      {currentQuestionIndex === questions.length && (
-        <FinalScreen timeSpent={timeSpent} resetQuiz={resetQuiz} />
-      )}
       {currentQuestionIndex > 0 && (
-        <button className="bg-primary text-white px-4 py-2 rounded" onClick={handlePrevious}>
+        <button className="previous-button" onClick={handlePrevious}>
           Previous
         </button>
       )}
