@@ -23,12 +23,12 @@ const CustomInputQuestion: React.FC<CustomInputQuestionProps> = ({ question, onA
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
         placeholder="Type your answer here..."
-        className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-sans"
       />
       <button
         onClick={handleNext}
         disabled={!inputValue}
-        className="bg-primary text-white px-4 py-2 rounded"
+        className="bg-primary text-white px-4 py-2 rounded font-sans"
       >
         Next
       </button>

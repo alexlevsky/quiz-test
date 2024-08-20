@@ -65,8 +65,8 @@ const Quiz: React.FC = () => {
   if (!currentQuestion) return null;
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen">
-      <div className="quiz-container bg-white p-8 rounded-lg shadow-lg">
+    <div className="flex items-center justify-center h-screen w-screen font-sans">
+      <div className="quiz-container bg-white p-8 rounded-lg shadow-lg font-sans">
         {currentQuestion.type === 'select-sex' && (
           <SelectSexQuestion
             question={currentQuestion}
@@ -90,7 +90,7 @@ const Quiz: React.FC = () => {
           />
         )}
         {currentQuestionIndex > 0 && (
-          <button className="mt-4 previous-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handlePrevious}>
+          <button className="mt-4 previous-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded font-sans" onClick={handlePrevious}>
             Previous
           </button>
         )}
