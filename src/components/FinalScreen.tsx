@@ -14,7 +14,7 @@ const FinalScreen: React.FC<FinalScreenProps> = ({ timeSpent, resetQuiz }) => {
         <h2 className="text-2xl font-bold mb-4">You are all set!</h2>
         <p className="mb-4">Total time spent: {Math.round(totalTimeSpent / 1000)} seconds</p>
         <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded font-sans"
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 w-full rounded font-sans"
           onClick={resetQuiz}
         >
           Reset Quiz

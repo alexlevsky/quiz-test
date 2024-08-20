@@ -16,9 +16,9 @@ const SingleAnswerQuestion: React.FC<SingleAnswerQuestionProps> = ({ question, o
       <h2>{question.question}</h2>
       <div className="options">
         {question.options.map(option => (
-        <div className='flex items-center  w-full h-15 border-2 border-black mx-0 px-2' key={option}>
+        <div className='flex items-center  w-full h-15 border-2 border-grey mx-0 my-1 py-2 rounded-lg' key={option}>
           <label>
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center w-full h-full'>
                 <div>
                     <input
                     type="radio"

@@ -90,7 +90,7 @@ const Quiz: React.FC = () => {
           />
         )}
         {currentQuestionIndex > 0 && (
-          <button className="mt-4 previous-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded font-sans" onClick={handlePrevious}>
+          <button className="mt-1 previous-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 w-full rounded font-sans" onClick={handlePrevious}>
             Previous
           </button>
         )}
