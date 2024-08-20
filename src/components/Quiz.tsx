@@ -65,36 +65,39 @@ const Quiz: React.FC = () => {
   if (!currentQuestion) return null;
 
   return (
-    <div className="quiz-container">
-      {currentQuestion.type === 'select-sex' && (
-        <SelectSexQuestion
-          question={currentQuestion}
-          onAnswer={handleAnswer}
-          selectedAnswer={answers[currentQuestion.id]}
-        />
-      )}
-      {currentQuestion.type === 'single-variant' &&
-        (!currentQuestion.conditional || answers[1] === currentQuestion.conditional) && (
-          <SingleAnswerQuestion
+    <div className="flex items-center justify-center h-screen w-screen">
+      <div className="quiz-container bg-white p-8 rounded-lg shadow-lg">
+        {currentQuestion.type === 'select-sex' && (
+          <SelectSexQuestion
             question={currentQuestion}
             onAnswer={handleAnswer}
             selectedAnswer={answers[currentQuestion.id]}
           />
         )}
-      {currentQuestion.type === 'custom-input' && (
-        <CustomInputQuestion
-          question={currentQuestion}
-          onAnswer={handleAnswer}
-          selectedAnswer={answers[currentQuestion.id]}
-        />
-      )}
-      {currentQuestionIndex > 0 && (
-        <button className="previous-button" onClick={handlePrevious}>
-          Previous
-        </button>
-      )}
+        {currentQuestion.type === 'single-variant' &&
+          (!currentQuestion.conditional || answers[1] === currentQuestion.conditional) && (
+            <SingleAnswerQuestion
+              question={currentQuestion}
+              onAnswer={handleAnswer}
+              selectedAnswer={answers[currentQuestion.id]}
+            />
+          )}
+        {currentQuestion.type === 'custom-input' && (
+          <CustomInputQuestion
+            question={currentQuestion}
+            onAnswer={handleAnswer}
+            selectedAnswer={answers[currentQuestion.id]}
+          />
+        )}
+        {currentQuestionIndex > 0 && (
+          <button className="mt-4 previous-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handlePrevious}>
+            Previous
+          </button>
+        )}
+      </div>
     </div>
   );
 };
 
 export default Quiz;
+
